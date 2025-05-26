@@ -1,0 +1,26 @@
+<style>
+  .table-flex {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .table-row {
+    display: flex;
+    flex-wrap: wrap; /* allows wrapping on small screens */
+    border-bottom: 1px solid #ccc;
+    padding: 8px 0;
+  }
+
+  .table-cell {
+    flex: 1 0 150px; /* grow, shrink, base width */
+    padding: 4px 8px;
+    box-sizing: border-box;
+    word-break: break-word;
+  }
+
+  .header {
+    font-weight: bold;
+    background: #f0f0f0;
+  }
+</style>
