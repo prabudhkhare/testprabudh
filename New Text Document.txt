@@ -1,9 +1,5 @@
-    <h:selectOneMenu id="appGroupSelection" value="#{yourBean.selectedCity}">
-        <f:selectItem itemLabel="All" itemValue="All" />
-        <f:selectItem itemLabel="Private" itemValue="Private" />
-        <f:selectItem itemLabel="Public" itemValue="Public" />
-        <f:ajax render="" />
-    </h:selectOneMenu>
 
-
-<f:param name="city" value="#{yourBean.selectedCity}" />
+    <h:commandLink action="cityPage">
+        <f:param name="city" value="#{yourBean.selectedCity}" />
+        Go to City Page
+    </h:commandLink>
