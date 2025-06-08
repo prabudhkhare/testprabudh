@@ -1,8 +1,8 @@
-     function applyFilter(value) {
-            // find the input element of the first column (0-based)
+      function applyFilter(value) {
             const tableWidget = PF('statusTable');
-            const filterInput = tableWidget.thead.find('input:text').eq(0); // 0 = first column
-
-            filterInput.val(value);  // set the filter value
-            tableWidget.filter();    // trigger filtering
+            tableWidget.cfg.filterMap = {}; // reset filters
+            if (value) {
+                tableWidget.cfg.filterMap['type'] = value;
+            }
+            tableWidget.filter();
         }
