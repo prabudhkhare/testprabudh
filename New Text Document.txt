@@ -1,8 +1,1 @@
-      function applyFilter(value) {
-            const tableWidget = PF('statusTable');
-            tableWidget.cfg.filterMap = {}; // reset filters
-            if (value) {
-                tableWidget.cfg.filterMap['type'] = value;
-            }
-            tableWidget.filter();
-        }
+filterBy="#{status.type}" filterMatchMode="exact"
