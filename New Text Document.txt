@@ -1,1 +1,28 @@
-filterBy="#{status.type}" filterMatchMode="exact"
+let allRows = [];
+
+function filterRows(type) {
+
+    const tbody = document.getElementById("myTableBody");
+    
+    if(allRows.length == 0) {
+      allRows = Array.from(tbody.rows);
+    }
+
+    if (!tbody || allRows.length === 0) return;
+
+    // Clear the tbody
+    tbody.innerHTML = "";
+
+    let filteredRows;
+
+    if (type === "Public") {
+      filteredRows = allRows.filter(row => row.cells[0].innerHTML.trim().toLowerCase() === "true");
+    } else if (type === "Private") {
+      filteredRows = allRows.filter(row => row.cells[0].innerHTML.trim().toLowerCase() === "false");
+    } else {
+      filteredRows = allRows; // Show all
+    }
+
+    // Append filtered rows back to tbody
+    filteredRows.forEach(row => tbody.appendChild(row));
+  }
