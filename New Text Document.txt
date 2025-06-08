@@ -1,5 +1,8 @@
+     function applyFilter(value) {
+            // find the input element of the first column (0-based)
+            const tableWidget = PF('statusTable');
+            const filterInput = tableWidget.thead.find('input:text').eq(0); // 0 = first column
 
-    <h:commandLink action="cityPage">
-        <f:param name="city" value="#{yourBean.selectedCity}" />
-        Go to City Page
-    </h:commandLink>
+            filterInput.val(value);  // set the filter value
+            tableWidget.filter();    // trigger filtering
+        }
